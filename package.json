@@ -1,0 +1,7 @@
+{
+  "name": "media-queries",
+  "version": "0.0.2",
+  "description": "Media Queries",
+  "main": "mediaQueries.js",
+  "author": "One Darnley Road"
+}

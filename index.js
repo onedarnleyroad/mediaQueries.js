@@ -42,7 +42,7 @@ module.exports = (function(w) {
         }
     };
 
-    var _minWidth = function( size ) {
+    var _minWidth = function( size, unit ) {
         if (mq) {
             return ( window.matchMedia('(min-width: ' + size + unit + ')').matches );
         } else {

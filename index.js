@@ -25,12 +25,7 @@ module.exports = (function(w) {
         console.log( media.matches('tablet-only') );
     */
 
-    var defaults = {
-        desktop: { min: 1367, unit: 'px' },
-        laptop: { max: 1366, unit: 'px' },
-        tablet: { max: 1024, unit: 'px' },
-        mobile: { max: 480, unit: 'px' },
-    };
+
 
     // can we use the matchMedia api?
     // if not use plain old jQuery window size.
@@ -43,7 +38,7 @@ module.exports = (function(w) {
         if (mq) {
             return ( window.matchMedia('(max-width: ' + size + unit + ')').matches );
         } else {
-            return ( $(window).width() <= size );
+            return ( window.innerWidth <= size );
         }
     };
 
@@ -51,12 +46,18 @@ module.exports = (function(w) {
         if (mq) {
             return ( window.matchMedia('(min-width: ' + size + unit + ')').matches );
         } else {
-            return ( $(window).width() > size );
+            return ( window.innerWidth > size );
         }
     };
 
     var MediaQueries = function( config ) {
-        this.breakpoints = $.extend(defaults, config );
+        var defaults = {
+            desktop: { min: 1367, unit: 'px' },
+            laptop: { max: 1366, unit: 'px' },
+            tablet: { max: 1024, unit: 'px' },
+            mobile: { max: 480, unit: 'px' },
+        };
+        this.breakpoints = config || defaults;
         return this;
     };
 

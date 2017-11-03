@@ -75,6 +75,7 @@ module.exports = (function(w) {
         if (!rule) { return -1; }
 
         var unit = 'px';
+
         if (rule.hasOwnProperty('unit')) {
             unit = rule.unit;
         }
@@ -82,14 +83,14 @@ module.exports = (function(w) {
         if (rule.hasOwnProperty( 'max' )) {
 
 
-            if (!_maxWidth( rule.max )) {
+            if (!_maxWidth( rule.max, unit )) {
                 return false;
             }
         }
 
         if (rule.hasOwnProperty( 'min' )) {
 
-            if (!_minWidth( rule.min )) {
+            if (!_minWidth( rule.min, unit )) {
                 return false;
             }
         }

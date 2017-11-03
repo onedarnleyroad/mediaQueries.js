@@ -1,4 +1,6 @@
-(function(w) {
+// NEW NODE / BROWSERIFY VERSION
+
+module.exports = (function(w) {
 
     // usage:
     /*
@@ -51,7 +53,7 @@
         }
     };
 
-    window.MediaQueries = function( config ) {
+    var MediaQueries = function( config ) {
         this.breakpoints = $.extend(defaults, config );
         return this;
     };
@@ -88,4 +90,6 @@
 
     };
 
-})(window);
+    return MediaQueries;
+
+})();

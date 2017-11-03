@@ -1,3 +1,5 @@
+// OLD NON NODE VERSION,
+// USE THIS ONE IF USING NORMAL CONCAT
 (function(w) {
 
     // usage:
